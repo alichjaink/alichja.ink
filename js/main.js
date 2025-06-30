@@ -66,7 +66,7 @@ const basePath = window.location.pathname.includes('/faq/') ||
                  window.location.pathname.includes('/Regulations/') ||
                  window.location.pathname.includes('/galery/') ? '../' : '';
 
-const backgrounds = [
+/* const backgrounds = [
   `${basePath}images/back/1.jpg`,
   `${basePath}images/back/2.jpg`,
   `${basePath}images/back/3.jpg`,
@@ -77,7 +77,8 @@ const backgrounds = [
   `${basePath}images/back/8.jpg`,
   `${basePath}images/back/9.jpg`,
   `${basePath}images/back/10.jpg`,
-];
+]; */
+
 
 let current = 0;
 let showingBg1 = true;
