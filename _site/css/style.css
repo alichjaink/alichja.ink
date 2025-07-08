@@ -708,8 +708,8 @@ body.gallery-page .section-dark {
 @media (max-width: 768px) {
   .floating-social-bar {
     flex-direction: column; /* Ustawiamy z powrotem na kolumnę dla mobilnych */
-    top: auto; /* Nie używamy top */
-    bottom: 12vh; /* Wartość procentowa: np. 12% wysokości widoku, dostosuj! */
+    top: 70px; /* Nie używamy top */
+    bottom: auto; /* Wartość procentowa: np. 12% wysokości widoku, dostosuj! */
     left: 3vw; /* Wartość procentowa: np. 3% szerokości widoku, dostosuj! */
     transform: none; /* Usuwamy transform: translateX(-50%) */
     padding: 0; /* Resetujemy padding, jeśli był ustawiony na poziomie paska dla mobilnych */
@@ -718,12 +718,11 @@ body.gallery-page .section-dark {
     z-index: 1001; /* Upewniamy się, że jest na wierzchu */
     width: auto; /* Nie rozciągamy na całą szerokość */
     align-items: flex-start; /* Domyślnie align-items dla kolumny */
-    gap: 1.2rem; /* Nieco zmniejszony odstęp między ikonkami, możesz dostosować */
   }
 
   .floating-social-bar a {
     /* Wracamy do stylów desktopowych, ale z drobnymi modyfikacjami dla mobilnych */
-    display: block;
+    display: block; /* Każda ikona jako blok */
     background-color: rgba(30, 30, 30, 0.9); /* Dajemy im własne tło */
     color: #87CEEB;
     text-decoration: none;
