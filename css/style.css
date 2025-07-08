@@ -733,7 +733,7 @@ body.gallery-page .section-dark {
     box-shadow: 0 2px 6px rgba(0,0,0,0.6);
     transition: transform 0.3s, background-color 0.3s;
     /* Dodatkowy margines, żeby ikony były bardziej odstające od krawędzi */
-    margin-bottom: 1rem; /* Zostawiamy rem, aby odstęp między ikonami był spójny */
+    margin-bottom: 0.1rem; /* Zostawiamy rem, aby odstęp między ikonami był spójny */
   }
 
   /* Upewnijmy się, że hover działa tak jak na desktopie, gdy są w kolumnie */
