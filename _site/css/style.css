@@ -108,6 +108,8 @@ body.Regulations-page .regulations-list div {
     padding: 0.6em 1.2em;
     top: 50px; /* ZMIANA: Ustawienie na stałe 50px od góry (dostosuj do wysokości menu) */
     right: 20vw;
+    bottom: auto;
+    left: auto;
     /* bottom: 3vw; */
   }
 }
