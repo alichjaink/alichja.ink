@@ -687,13 +687,13 @@ body.gallery-page .section-dark {
 
 .floating-social-bar {
   /* ZMIANA: Przesunięto na górę strony, pod menu, zachowano pionowy układ */
-  position: fixed;
-  top: 80px; /* ZMIANA: Ustawienie na stałe 80px od góry (dostosuj do wysokości menu) */
-  left: 0;
+  position: fixed;/* Ten parametr sprawia, że pasek jest przypięty do okna przeglądarki, niezależnie od przewijania. */
+  top: 70px; /* ZMIANA: Ustawienie na stałe 80px od góry (dostosuj do wysokości menu) */
+  left: 3vw; /* Przypina pasek do LEWEJ krawędzi okna przeglądarki. */
   transform: none; /* ZMIANA: Usunięto transform: translateY(-50%) */
   display: flex;
   flex-direction: column; /* ZMIANA: Pasek pionowo */
-  gap: 1rem;
+  gap: 0.3rem; /* Odstęp między ikonami. */
   background: transparent; /* Pasek sam w sobie przezroczysty, ikony mają własne tło */
   z-index: 1000;
   padding-left: 0.3rem; /* Mały padding od lewej krawędzi */
