@@ -22,6 +22,23 @@
 ============================================================
 */
 
+/* GLOBALNE ZABEZPIECZENIA RESPONSyWNOŚCI */
+html, body {
+  /* Zapobiega przewijaniu poziomemu, jeśli jakiś element jest zbyt szeroki. */
+  overflow-x: hidden;
+  /* Resetuje minimalną szerokość, by body mogło skurczyć się do dowolnej wielkości. */
+  min-width: 0;
+  /* Zapewnia, że body i html zawsze zajmują 100% szerokości okna przeglądarki. */
+  width: 100%;
+}
+
+/* Zapewnia, że obrazy, filmy i elementy osadzone są responsywne i nie wychodzą poza swoje kontenery. */
+img, video, iframe, object, embed {
+  max-width: 100%; /* Sprawia, że element nigdy nie będzie szerszy niż jego kontener. */
+  height: auto;    /* Zachowuje proporcje wysokości do szerokości. */
+  display: block;  /* Ustawia element jako blokowy, co pomaga w układzie. */
+}
+
 /* === Styl sekcji regulaminu i polityki prywatności === */
 body.Regulations-page .regulations-section {
   background: rgba(0,0,0,0.55);
@@ -54,15 +71,20 @@ body.Regulations-page .regulations-list div {
   color: #eee;
   font-size: 1em;
   line-height: 1.6;
+  /* Dzieli długie słowa, by nie wychodziły poza kontener, zapewniając responsywność tekstu. */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* === Przycisk regulacji w prawym dolnym rogu === */
+/* === Przycisk regulacji - ZMIANY: Umieszczenie na środku, pod menu === */
 .floating-regulations-btn {
-  position: fixed;
-  top: 80px; /* ZMIANA: Przesunięto na górę, pod menu */
-  right: 20px;
-  bottom: auto; /* ZMIANA: Usunięto bottom */
-  z-index: 1000;
+  position: fixed; /* Ten parametr sprawia, że element jest przypięty do okna przeglądarki, niezależnie od przewijania strony. */
+  top: 80px;       /* Ten parametr określa odsunięcie elementu od GÓRNEJ krawędzi okna przeglądarki. Wartość "80px" jest przykładem - dostosuj ją, aby przycisk był idealnie pod Twoim menu głównym. */
+  left: 50%;       /* Ten parametr przesuwa lewą krawędzią elementu na 50% szerokości okna przeglądarki. To jest pierwszy krok do centrowania. */
+  transform: translateX(-50%); /* Ten parametr koryguje pozycję elementu, przesuwając go o połowę jego własnej szerokości W LEWO. W połączeniu z "left: 50%;" powoduje to idealne wycentrowanie elementu horyzontalnie. */
+  right: auto;     /* Ten parametr upewnia się, że nie ma konfliktu z ustawieniem "right" z poprzednich reguł - jest ustawiony na automatyczny. */
+  bottom: auto;    /* Ten parametr upewnia się, że nie ma konfliktu z ustawieniem "bottom" z poprzednich reguł - jest ustawiony na automatyczny. */
+  z-index: 1000;   /* Ten parametr określa kolejność nakładania się elementów. Wyższa wartość oznacza, że element będzie "na wierzchu" innych, co jest ważne dla elementów fixed. */
   background: rgba(30, 30, 30, 0.92);
   color: #fff;
   border-radius: 2em;
@@ -86,14 +108,16 @@ body.Regulations-page .regulations-list div {
   text-decoration: underline;
 }
 
-/* ZMIANA: Dostosowanie pozycji przycisku regulacji na małych ekranach (góra) */
+/* @media dla przycisku regulacji na małych ekranach */
 @media (max-width: 600px) {
   .floating-regulations-btn {
     font-size: 0.98em;
     padding: 0.6em 1.2em;
-    top: 70px; /* ZMIANA: Dostosowano top dla mobilnych */
-    right: 20px;
-    bottom: auto; /* ZMIANA: Usunięto bottom */
+    top: 70px;      /* Ten parametr, podobnie jak wyżej, określa odsunięcie od góry dla mniejszych ekranów. Dostosuj, jeśli menu jest niższe na mobilnych. */
+    left: 50%;      /* Centrowanie od lewej. */
+    transform: translateX(-50%); /* Korygowanie pozycji. */
+    right: auto;    /* Upewnia się, że nie ma konfliktu. */
+    bottom: auto;   /* Upewnia się, że nie ma konfliktu. */
   }
 }
 
@@ -127,7 +151,6 @@ main {
 }
 
 .section-dark {
-  /* Uwaga: przezroczystość tła zmniejszona, by dynamiczne tło galerii było widoczne */
   background-color: rgba(0, 0, 0, 0.6);
   color: #ddd;
   padding: 4rem 2rem;
@@ -138,6 +161,8 @@ main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
+  /* Zapewnia, że padding i border są wliczane w szerokość elementu, zapobiegając wychodzeniu poza kontener. */
+  box-sizing: border-box;
 }
 
 /* === Tytuły sekcji i stron (standaryzowane) === */
@@ -157,8 +182,8 @@ main {
 /* === Nawigacja === */
 /* === Nawigacja główna (standaryzowana) === */
 .nav-main {
-  position: sticky;
-  top: 0;
+  position: sticky; /* Menu "przykleja" się do góry podczas przewijania. */
+  top: 0;           /* Przykleja się do samej góry okna przeglądarki. */
   background: #000;
   z-index: 999;
   padding: 1rem 0;
@@ -379,7 +404,8 @@ main {
 }
 
 .gallery-flex .gallery-item {
-  flex: 1 1 280px;
+  /* ZMIANA: Zmieniono flex-basis z 280px na auto, aby elementy galerii mogły się elastyczniej kurczyć. */
+  flex: 1 1 auto;
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -451,6 +477,9 @@ body.gallery-page .section-dark {
   font-size: 1rem;
   color: #ddd;
   line-height: 1.6;
+  /* Dzieli długie słowa, by nie wychodziły poza kontener, zapewniając responsywność tekstu. */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 768px) {
@@ -459,24 +488,24 @@ body.gallery-page .section-dark {
   }
 }
 
+/* Pływający pasek ikon sociali (z lewej strony) - ZMIANY: Pozycja u góry, pod menu, pionowo */
 .floating-social-bar {
-  /* ZMIANA: Przesunięto na górę strony, pod menu, zachowano pionowy układ */
-  position: fixed;
-  top: 80px; /* ZMIANA: Ustawienie na stałe 80px od góry (dostosuj do wysokości menu) */
-  left: 0;
-  transform: none; /* ZMIANA: Usunięto transform: translateY(-50%) */
+  position: fixed; /* Ten parametr sprawia, że pasek jest przypięty do okna przeglądarki, niezależnie od przewijania. */
+  top: 80px;       /* Określa odsunięcie paska od GÓRNEJ krawędzi okna przeglądarki. Dostosuj do wysokości menu. */
+  left: 0;         /* Przypina pasek do LEWEJ krawędzi okna przeglądarki. */
+  transform: none; /* Usuwa wszelkie poprzednie transformacje, np. centrowanie. */
   display: flex;
-  flex-direction: column; /* ZMIANA: Pasek pionowo */
-  gap: 1rem;
-  background: transparent; /* Pasek sam w sobie przezroczysty, ikony mają własne tło */
+  flex-direction: column; /* Ustawia ikony w kolumnę (pionowo). */
+  gap: 1rem;       /* Odstęp między ikonami. */
+  background: transparent; /* Kontener paska jest przezroczysty. */
   z-index: 1000;
-  padding-left: 0.3rem; /* Mały padding od lewej krawędzi */
-  bottom: auto; /* ZMIANA: Usunięto bottom */
+  padding-left: 0.3rem; /* Mały margines od lewej krawędzi okna. */
+  bottom: auto;    /* Upewnia się, że nie ma konfliktu z poprzednim ustawieniem "bottom". */
 }
 
 .floating-social-bar a {
-  display: block; /* Każda ikona jako blok */
-  background-color: rgba(30, 30, 30, 0.9);
+  display: block; /* Każda ikona jest renderowana jako blok, umożliwiając padding i marginesy. */
+  background-color: rgba(30, 30, 30, 0.9); /* Tło dla każdej pojedynczej ikony. */
   color: #87CEEB;
   text-decoration: none;
   font-size: 1.5rem;
@@ -490,28 +519,28 @@ body.gallery-page .section-dark {
 .floating-social-bar a:hover {
   background-color: #fff;
   color: #000;
-  transform: translateX(4px);
+  transform: translateX(4px); /* Przesunięcie ikony w prawo przy najechaniu. */
 }
 
-/* ZMIANA: Dostosowanie pozycji paska social media na małych ekranach (góra) */
+/* @media dla paska social media na małych ekranach */
 @media (max-width: 768px) {
   .floating-social-bar {
-    flex-direction: column; /* Nadal pionowo na mobilach */
-    top: 70px; /* ZMIANA: Dostosowano top dla mobilnych */
-    left: 3vw; /* Wartość procentowa od lewej */
-    bottom: auto; /* ZMIANA: Usunięto bottom */
-    transform: none; /* ZMIANA: Upewniamy się, że nie ma transformacji */
-    padding: 0; /* ZMIANA: Resetujemy padding, bo ikony mają własny */
-    background-color: transparent; /* Pasek jest przezroczysty */
-    border-radius: 0; /* Bez zaokrągleń dla paska */
+    flex-direction: column; /* Nadal pionowo na mobilnych. */
+    top: 70px; /* Określa odsunięcie od góry dla mniejszych ekranów. Dostosuj, jeśli menu jest niższe na mobilnych. */
+    left: 3vw; /* Odsunięcie od lewej krawędzi (procentowe dla elastyczności). */
+    bottom: auto;
+    transform: none;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
     z-index: 1001;
     width: auto;
     align-items: flex-start;
   }
 
   .floating-social-bar a {
-    display: block; /* Każda ikona jako blok */
-    background-color: rgba(30, 30, 30, 0.9); /* Dajemy im własne tło */
+    display: block;
+    background-color: rgba(30, 30, 30, 0.9);
     color: #87CEEB;
     text-decoration: none;
     font-size: 1.5rem;
@@ -520,13 +549,13 @@ body.gallery-page .section-dark {
     border-bottom-right-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.6);
     transition: transform 0.3s, background-color 0.3s;
-    margin-bottom: 1rem; /* Dodajemy margines między ikonami */
+    margin-bottom: 1rem; /* Dodaje odstęp między ikonami na mobilnych. */
   }
 
   .floating-social-bar a:hover {
-    background-color: #fff;
-    color: #000;
-    transform: translateX(4px);
+    background-color: rgba(255,255,255,0.1);
+    color: #87CEEB;
+    transform: none; /* Bez przesunięcia na hover na mobilnych, aby pasowało do mobilnego UX. */
   }
 }
 
