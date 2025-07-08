@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Content Manager</title>
+    <!--<script src="decap-cms.js"></script>-->
+
+  </head>
+  <body>
+    <script>
+      // Opcjonalnie, jeśli CMS nie startuje automatycznie
+      if (window.CMS_MANUAL_INIT) {
+        window.addEventListener('DOMContentLoaded', function () {
+          window.CMS && window.CMS.init();
+        });
+      }
+    </script>
+    <script src="decap-cms.js"></script>
+  </body>
+</html>
+<!-- This file is used to initialize the Decap CMS. -->

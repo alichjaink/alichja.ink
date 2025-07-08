@@ -1,0 +1,64 @@
+backend:
+  name: test-repo
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "alichja_header"
+    label: "Alichja – nagłówek"
+    files:
+      - file: "src/alichja/root-ind-alichja-header.md"
+        label: "Nagłówek sekcji"
+        name: "header"
+        fields:
+          - { label: "Tytuł", name: "title", widget: "string" }
+          - { label: "Intro 1", name: "intro1", widget: "text" }
+          - { label: "Intro 2", name: "intro2", widget: "text" }
+  - name: "alichja"
+    label: "Alichja – lista"
+    folder: "src/alichja"
+    create: true
+    filter: { field: "title", value: "" }
+    slug: "root-ind-alichja-{{order}}"
+    fields:
+      - { label: "Treść", name: "text", widget: "text" }
+      - { label: "Kolejność", name: "order", widget: "number" }
+  - name: "projects"
+    label: "Galeria – projekty"
+    folder: "src/projects"
+    create: true
+    slug: "root-ind-project-{{order}}"
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Opis", name: "desc", widget: "string" }
+      - { label: "Obrazek", name: "img", widget: "image" }
+      - { label: "Link do galerii", name: "link", widget: "string" }
+      - { label: "Kolejność", name: "order", widget: "number" }
+  - name: "news"
+    label: "Newsy"
+    folder: "src/news"
+    create: true
+    slug: "root-ind-news-{{order}}"
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "string" }
+      - { label: "Opis", name: "desc", widget: "string" }
+      - { label: "Kolejność", name: "order", widget: "number" }
+  - name: "faq"
+    label: "Mini FAQ"
+    folder: "src/faq"
+    create: true
+    slug: "root-ind-faq-{{order}}"
+    fields:
+      - { label: "Pytanie", name: "question", widget: "string" }
+      - { label: "Odpowiedź", name: "answer", widget: "text" }
+      - { label: "Kolejność", name: "order", widget: "number" }
+  - name: "hero"
+    label: "Hero"
+    files:
+      - file: "src/hero/root-ind-hero.md"
+        label: "Sekcja Hero"
+        name: "hero"
+        fields:
+          - { label: "Tytuł", name: "title", widget: "string" }
