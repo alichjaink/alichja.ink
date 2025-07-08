@@ -79,7 +79,7 @@ body.Regulations-page .regulations-list div {
 /* === Przycisk regulacji - ZMIANY: Umieszczenie na środku, pod menu === */
 .floating-regulations-btn {
   position: fixed; /* Ten parametr sprawia, że element jest przypięty do okna przeglądarki, niezależnie od przewijania strony. */
-  top: 40px;       /* Ten parametr określa odsunięcie elementu od GÓRNEJ krawędzi okna przeglądarki. Wartość "80px" jest przykładem - dostosuj ją, aby przycisk był idealnie pod Twoim menu głównym. */
+  top: 60px;       /* Ten parametr określa odsunięcie elementu od GÓRNEJ krawędzi okna przeglądarki. Wartość "80px" jest przykładem - dostosuj ją, aby przycisk był idealnie pod Twoim menu głównym. */
   left: 50%;       /* Ten parametr przesuwa lewą krawędzią elementu na 50% szerokości okna przeglądarki. To jest pierwszy krok do centrowania. */
   transform: translateX(-50%); /* Ten parametr koryguje pozycję elementu, przesuwając go o połowę jego własnej szerokości W LEWO. W połączeniu z "left: 50%;" powoduje to idealne wycentrowanie elementu horyzontalnie. */
   right: auto;     /* Ten parametr upewnia się, że nie ma konfliktu z ustawieniem "right" z poprzednich reguł - jest ustawiony na automatyczny. */
@@ -89,7 +89,7 @@ body.Regulations-page .regulations-list div {
   color: #fff;
   border-radius: 2em;
   padding: 0.2em 1em;
-  font-size: 0.7em;
+  font-size: 0.8em;
   font-family: inherit;
   box-shadow: 0 2px 12px rgba(0,0,0,0.18);
   text-decoration: none;
@@ -113,7 +113,7 @@ body.Regulations-page .regulations-list div {
   .floating-regulations-btn {
     font-size: 0.7em;
     padding: 0.2em 1em;
-    top: 50px;      /* Ten parametr, podobnie jak wyżej, określa odsunięcie od góry dla mniejszych ekranów. Dostosuj, jeśli menu jest niższe na mobilnych. */
+    top: 40px;      /* Ten parametr, podobnie jak wyżej, określa odsunięcie od góry dla mniejszych ekranów. Dostosuj, jeśli menu jest niższe na mobilnych. */
     left: 50%;      /* Centrowanie od lewej. */
     transform: translateX(-50%); /* Korygowanie pozycji. */
     right: auto;    /* Upewnia się, że nie ma konfliktu. */
