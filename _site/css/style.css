@@ -718,6 +718,7 @@ body.gallery-page .section-dark {
     z-index: 1001; /* Upewniamy się, że jest na wierzchu */
     width: auto; /* Nie rozciągamy na całą szerokość */
     align-items: flex-start; /* Domyślnie align-items dla kolumny */
+    gap: 1.2rem; /* Nieco zmniejszony odstęp między ikonkami, możesz dostosować */
   }
 
   .floating-social-bar a {
