@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy _site to main branch
 
 on:
   push:
@@ -12,8 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy _site to gh-pages
+      - name: Deploy _site content to main
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          publish_branch: main
+          force_orphan: true
