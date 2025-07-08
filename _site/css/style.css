@@ -496,7 +496,7 @@ body.gallery-page .section-dark {
   transform: none; /* Usuwa wszelkie poprzednie transformacje, np. centrowanie. */
   display: flex;
   flex-direction: column; /* Ustawia ikony w kolumnę (pionowo). */
-  gap: 0,50rem;       /* Odstęp między ikonami. */
+  gap: 0.60rem;       /* Odstęp między ikonami. */
   background: transparent; /* Kontener paska jest przezroczysty. */
   z-index: 1000;
   padding-left: 0.3rem; /* Mały margines od lewej krawędzi okna. */
