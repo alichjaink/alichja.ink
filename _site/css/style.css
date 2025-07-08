@@ -12,30 +12,11 @@
   - .gallery-flex, .gallery-item, .gallery-thumbnail – układ i styl galerii zdjęć
   - .fade-in – animacja pojawiania się sekcji przy przewijaniu
   - Bloki body.[nazwa-strony] ... – ustawienia przeźroczystości tła i kontenerów dla każdej podstrony
-
-  Zmiana wartości w blokach body.[nazwa-strony] .background-fixed lub .section-dark
-  wpływa na widoczność tła i czytelność treści na danej podstronie.
-============================================================
- */
-
-/*
-============================================================
-  style.css – główny arkusz stylów serwisu Alichja
-
-  Opis kluczowych klas i sekcji:
-  - .background-fixed – warstwa tła dynamicznego (zmieniana przez JS)
-  - .section-dark – ciemne, półprzezroczyste tło sekcji/kontenera (okno na treść)
-  - .default-container – główny kontener sekcji, ogranicza szerokość i dodaje padding
-  - .default-section-title, .default-page-title – standaryzowane tytuły sekcji i stron
-  - .nav-main – główna nawigacja (menu)
-  - .default-btn – przycisk akcji
-  - .gallery-flex, .gallery-item, .gallery-thumbnail – układ i styl galerii zdjęć
-  - .fade-in – animacja pojawiania się sekcji przy przewijaniu
-  - Bloki body.[nazwa-strony] ... – ustawienia przeźroczystości tła i kontenerów dla każdej podstrony
   - .regulations-section, .regulations-list – dedykowane style dla podstrony Regulaminu, Polityki Prywatności i RODO
   – Pływający pasek ikon sociali (z lewej strony)
     - .floating-social-bar – kontener z ikonami
-    - .floating-social-bar a – pojedyncze przyciski 
+    - .floating-social-bar a – pojedyncze przyciski
+
   Zmiana wartości w blokach body.[nazwa-strony] .background-fixed lub .section-dark
   wpływa na widoczność tła i czytelność treści na danej podstronie.
 ============================================================
@@ -107,7 +88,7 @@ body.Regulations-page .regulations-list div {
     font-size: 0.98em;
     padding: 0.6em 1.2em;
     right: 3vw;
-    bottom: 3vw;
+    bottom: 3vw; /* Pozostaje procentowo, tak jak było i ma być */
   }
 }
 
@@ -652,7 +633,6 @@ body.gallery-page .section-dark {
   }
 }
 
-
 .floating-social-bar {
   position: fixed;
   top: 40%;
@@ -687,20 +667,40 @@ body.gallery-page .section-dark {
 
 @media (max-width: 768px) {
   .floating-social-bar {
-    flex-direction: row;
-    top: auto;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.5rem 1rem;
-    background-color: rgba(0,0,0,0.8);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    flex-direction: column; /* Ustawiamy z powrotem na kolumnę dla mobilnych */
+    top: auto; /* Nie używamy top */
+    bottom: 12vh; /* Wartość procentowa: np. 12% wysokości widoku, dostosuj! */
+    left: 3vw; /* Wartość procentowa: np. 3% szerokości widoku, dostosuj! */
+    transform: none; /* Usuwamy transform: translateX(-50%) */
+    padding: 0; /* Resetujemy padding, jeśli był ustawiony na poziomie paska dla mobilnych */
+    background-color: transparent; /* Pasek ma być przezroczysty, ikony mają własne tło */
+    border-radius: 0; /* Resetujemy zaokrąglenia */
+    z-index: 1001; /* Upewniamy się, że jest na wierzchu */
+    width: auto; /* Nie rozciągamy na całą szerokość */
+    align-items: flex-start; /* Domyślnie align-items dla kolumny */
   }
 
   .floating-social-bar a {
-    border-radius: 50%;
-    padding: 0.6rem 0.6rem;
+    /* Wracamy do stylów desktopowych, ale z drobnymi modyfikacjami dla mobilnych */
+    display: block;
+    background-color: rgba(30, 30, 30, 0.9); /* Dajemy im własne tło */
+    color: #87CEEB;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.6rem;
+    border-top-right-radius: 8px; /* Zachowujemy zaokrąglenia z prawej strony */
+    border-bottom-right-radius: 8px; /* Zachowujemy zaokrąglenia z prawej strony */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    transition: transform 0.3s, background-color 0.3s;
+    /* Dodatkowy margines, żeby ikony były bardziej odstające od krawędzi */
+    margin-bottom: 1rem; /* Zostawiamy rem, aby odstęp między ikonami był spójny */
+  }
+
+  /* Upewnijmy się, że hover działa tak jak na desktopie, gdy są w kolumnie */
+  .floating-social-bar a:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateX(4px);
   }
 }
 
