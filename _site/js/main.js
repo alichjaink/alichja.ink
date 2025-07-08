@@ -127,21 +127,43 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+  
+
+
+// Dane kontaktowe UKRYTE I ZAKODOWANE W JAVASCRIPCIE
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  const emailParts = ["alichja", ".", "ink", "@", "gmail", ".", "com"];
+  const whatsappParts = ["514", "183", "844"]; // Możesz podzielić na dowolne fragmenty
+
+  // Funkcja do składania e-maila
+  function getEmailAddress() {
+    return emailParts[0] + emailParts[1] + emailParts[2] + emailParts[3] + emailParts[4] + emailParts[5] + emailParts[6];
+  }
+
+  // Funkcja do składania numeru WhatsApp
+  function getWhatsappNumber() {
+    return whatsappParts[0] + whatsappParts[1] + whatsappParts[2];
+  }
+
   // WhatsApp
   const whatsapp = document.getElementById("whatsapp-link");
   if (whatsapp) {
-    const number = whatsapp.dataset.number;
-    whatsapp.href = "https://wa.me/48" + number;
-    whatsapp.setAttribute("target", "_blank");
+    whatsapp.addEventListener('click', function(event) {
+      event.preventDefault(); // Zapobiega domyślnej akcji linku
+      const fullWhatsappNumber = getWhatsappNumber(); // Składanie numeru
+      window.open("https://wa.me/48" + fullWhatsappNumber, "_blank"); // Otwiera link w nowej karcie
+    });
   }
 
   // E-mail
   const email = document.getElementById("email-link");
   if (email) {
-    const user = email.dataset.user;
-    const domain = email.dataset.domain;
-    email.href = `mailto:${user}@${domain}`;
+    email.addEventListener('click', function(event) {
+      event.preventDefault(); // Zapobiega domyślnej akcji linku
+      const fullEmailAddress = getEmailAddress(); // Składanie e-maila
+      window.location.href = `mailto:${fullEmailAddress}`; // Otwiera klienta poczty
+    });
   }
 });
