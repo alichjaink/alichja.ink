@@ -685,7 +685,7 @@ body.gallery-page .section-dark {
   transform: translateX(4px);
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .floating-social-bar {
     flex-direction: row;
     top: auto;
@@ -702,7 +702,49 @@ body.gallery-page .section-dark {
     border-radius: 50%;
     padding: 0.6rem 0.6rem;
   }
+}*/
+
+
+@media (max-width: 768px) {
+  .floating-social-bar {
+    flex-direction: column; /* Ustawiamy z powrotem na kolumnę dla mobilnych */
+    top: auto; /* Nie używamy top */
+    bottom: 12vh; /* Wartość procentowa: np. 12% wysokości widoku, dostosuj! */
+    left: 3vw; /* Wartość procentowa: np. 3% szerokości widoku, dostosuj! */
+    transform: none; /* Usuwamy transform: translateX(-50%) */
+    padding: 0; /* Resetujemy padding, jeśli był ustawiony na poziomie paska dla mobilnych */
+    background-color: transparent; /* Pasek ma być przezroczysty, ikony mają własne tło */
+    border-radius: 0; /* Resetujemy zaokrąglenia */
+    z-index: 1001; /* Upewniamy się, że jest na wierzchu */
+    width: auto; /* Nie rozciągamy na całą szerokość */
+    align-items: flex-start; /* Domyślnie align-items dla kolumny */
+  }
+
+  .floating-social-bar a {
+    /* Wracamy do stylów desktopowych, ale z drobnymi modyfikacjami dla mobilnych */
+    display: block;
+    background-color: rgba(30, 30, 30, 0.9); /* Dajemy im własne tło */
+    color: #87CEEB;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.6rem;
+    border-top-right-radius: 8px; /* Zachowujemy zaokrąglenia z prawej strony */
+    border-bottom-right-radius: 8px; /* Zachowujemy zaokrąglenia z prawej strony */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    transition: transform 0.3s, background-color 0.3s;
+    /* Dodatkowy margines, żeby ikony były bardziej odstające od krawędzi */
+    margin-bottom: 1rem; /* Zostawiamy rem, aby odstęp między ikonami był spójny */
+  }
+
+  /* Upewnijmy się, że hover działa tak jak na desktopie, gdy są w kolumnie */
+  .floating-social-bar a:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateX(4px);
+  }
 }
+
+
 
 .floating-social-bar a img {
   width: 34px;
