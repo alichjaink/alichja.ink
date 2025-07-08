@@ -106,8 +106,8 @@ body.Regulations-page .regulations-list div {
   .floating-regulations-btn {
     font-size: 0.98em;
     padding: 0.6em 1.2em;
+    top 10 vw;
     right: 20vw;
-    top 10 wg;
     /* bottom: 3vw; */
   }
 }
