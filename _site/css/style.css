@@ -48,6 +48,7 @@ body.Regulations-page .regulations-section {
   margin: 2.5rem 0;
   padding: 2.5rem 2rem 2rem 2rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    z-index: 999;
 }
 body.Regulations-page .regulations-list {
   list-style: none;
