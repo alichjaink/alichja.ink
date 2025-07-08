@@ -667,6 +667,8 @@ body.gallery-page .section-dark {
   transform: translateX(4px);
 }
 
+/* ... reszta Twojego style.css ... */
+
 /* Zmiany GEMINI: Dopasowanie pozycji paska social media na małych ekranach */
 @media (max-width: 768px) {
   .floating-social-bar {
