@@ -216,7 +216,7 @@ main {
 }
 
 /* MIOKO!!!!!!   Nowa sekcja media query dla menu mobilnego */
-@media (max-width: 600px) { /* lub 600px, w zależności, gdzie menu przestaje się mieścić */
+@media (max-width: 500px) { /* lub 600px, w zależności, gdzie menu przestaje się mieścić */
   .nav-main ul {
     gap: 0.5rem; /* ZMNIEJSZONY odstęp między elementami menu */
     flex-wrap: wrap; /* POZWALA elementom przechodzić do następnej linii, jeśli się nie mieszczą */
@@ -233,6 +233,7 @@ main {
     padding: 0.5rem 0; /* ZMNIEJSZONY padding góra/dół dla całego menu */
   }
 }
+/* MIOKO!!!!!!   Nowa sekcja media query dla menu mobilnego */
 
 
 
