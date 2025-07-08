@@ -702,7 +702,7 @@ body.gallery-page .section-dark {
 
 .floating-social-bar a {
   display: block; /* Każda ikona jako blok */
-  background-color: rgba(30, 30, 30, 0.9);
+  background-color: rgba(40, 40, 40, 0.9);
   color: #87CEEB;
   text-decoration: none;
   font-size: 1.5rem;
@@ -757,7 +757,7 @@ body.gallery-page .section-dark {
   .floating-social-bar a {
     /* Wracamy do stylów desktopowych, ale z drobnymi modyfikacjami dla mobilnych */
     display: block; /* Każda ikona jako blok */
-    background-color: rgba(30, 30, 30, 0.9); /* Dajemy im własne tło */
+    background-color: rgba(40, 40, 40, 0.9); /* Dajemy im własne tło */
     color: #87CEEB;
     text-decoration: none;
     font-size: 1.5rem;
