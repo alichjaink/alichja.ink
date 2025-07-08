@@ -83,12 +83,14 @@ body.Regulations-page .regulations-list div {
   box-shadow: 0 4px 18px rgba(0,0,0,0.22);
   text-decoration: underline;
 }
+
+/* Zmiany GEMINI: Dopasowanie pozycji przycisku regulacji na małych ekranach */
 @media (max-width: 600px) {
   .floating-regulations-btn {
     font-size: 0.98em;
     padding: 0.6em 1.2em;
     right: 3vw;
-    bottom: 3vw; /* Pozostaje procentowo, tak jak było i ma być */
+    bottom: 3vw; /* Wartość procentowa dla spójności i braku kolizji z ikonami social media */
   }
 }
 
@@ -665,6 +667,7 @@ body.gallery-page .section-dark {
   transform: translateX(4px);
 }
 
+/* Zmiany GEMINI: Dopasowanie pozycji paska social media na małych ekranach */
 @media (max-width: 768px) {
   .floating-social-bar {
     flex-direction: column; /* Ustawiamy z powrotem na kolumnę dla mobilnych */
