@@ -127,8 +127,8 @@ body.gallery-page .section-dark, body.gallery-page main, body.gallery-page .defa
 
 
 /* REGULAMIN / REGULATIONS */
-body.Regulations-page .background-fixed { opacity: 0.8; }
-body.Regulations-page .section-dark, body.Regulations-page main, body.Regulations-page .default-container { background-color: rgba(0,0,0,0.8); }
+body.Regulations-page .background-fixed { opacity: 0.4; }
+body.Regulations-page .section-dark, body.Regulations-page main, body.Regulations-page .default-container { background-color: rgba(0,0,0,0.6); }
 
 /* FAQ */
 body.faq-page .background-fixed { opacity: 0.5; }
