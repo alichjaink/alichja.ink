@@ -55,11 +55,13 @@ body.Regulations-page .regulations-list div {
   font-size: 1em;
   line-height: 1.6;
 }
+
 /* === Przycisk regulacji w prawym dolnym rogu === */
 .floating-regulations-btn {
   position: fixed;
+  top: 80px; /* ZMIANA: Przesunięto na górę, pod menu */
   right: 2vw;
-  bottom: 2vw;
+  bottom: auto; /* ZMIANA: Usunięto bottom */
   z-index: 1000;
   background: rgba(30, 30, 30, 0.92);
   color: #fff;
@@ -84,47 +86,38 @@ body.Regulations-page .regulations-list div {
   text-decoration: underline;
 }
 
-/* Zmiany GEMINI: Dopasowanie pozycji przycisku regulacji na małych ekranach */
+/* ZMIANA: Dostosowanie pozycji przycisku regulacji na małych ekranach (góra) */
 @media (max-width: 600px) {
   .floating-regulations-btn {
     font-size: 0.98em;
     padding: 0.6em 1.2em;
-    right: 5vw;
-    bottom: 5vw; /* Wartość procentowa dla spójności i braku kolizji z ikonami social media */
+    top: 70px; /* ZMIANA: Dostosowano top dla mobilnych */
+    right: 3vw;
+    bottom: auto; /* ZMIANA: Usunięto bottom */
   }
 }
 
 /* === PRZEŹROCZYSTOŚĆ TŁA I KONTENERÓW DLA KAŻDEJ STRONY === */
+body.main-page .background-fixed { background-color: rgba(0,0,0,0.1); }
+body.main-page .section-dark { background-color: rgba(0,0,0,0.4); }
 
+body.Gallery-page .background-fixed { background-color: rgba(0,0,0,0.2); }
+body.Gallery-page .section-dark { background-color: rgba(0,0,0,0.5); }
 
-/* STRONA GŁÓWNA */
-body.home-page .background-fixed { opacity: 0.6; }
-body.home-page .section-dark, body.home-page main, body.home-page .default-container { background-color: rgba(0,0,0,0.4); }
+body.Portfolio-page .background-fixed { background-color: rgba(0,0,0,0.3); }
+body.Portfolio-page .section-dark { background-color: rgba(0,0,0,0.6); }
 
-/* GALERIA */
-body.gallery-page .background-fixed { opacity: 0.6; }
-body.gallery-page .section-dark, body.gallery-page main, body.gallery-page .default-container { background-color: rgba(0,0,0,0.4); }
+body.Regulations-page .background-fixed { background-color: rgba(0,0,0,0.4); }
+body.Regulations-page .section-dark { background-color: rgba(0,0,0,0.7); }
 
+body.Contact-page .background-fixed { background-color: rgba(0,0,0,0.5); }
+body.Contact-page .section-dark { background-color: rgba(0,0,0,0.8); }
 
-/* REGULAMIN / REGULATIONS */
-body.Regulations-page .background-fixed { opacity: 0.5; }
-body.Regulations-page .section-dark, body.Regulations-page main, body.Regulations-page .default-container { background-color: rgba(0,0,0,0.45); }
+body.FAQ-page .background-fixed { background-color: rgba(0,0,0,0.6); }
+body.FAQ-page .section-dark { background-color: rgba(0,0,0,0.9); }
 
-/* FAQ */
-body.faq-page .background-fixed { opacity: 0.5; }
-body.faq-page .section-dark, body.faq-page main, body.faq-page .default-container { background-color: rgba(0,0,0,0.4); }
-
-/* BLOG */
-body.blog-page .background-fixed { opacity: 0.6; }
-body.blog-page .section-dark, body.blog-page main, body.blog-page .default-container { background-color: rgba(0,0,0,0.6); }
-
-/* HISTORIA */
-body.historia-page .background-fixed { opacity: 0.5; }
-body.historia-page .section-dark, body.historia-page main, body.historia-page .default-container { background-color: rgba(0,0,0,0.4); }
-
-/* DZIEKUJE */
-body.dziekuje-page .background-fixed { opacity: 0.5; }
-body.dziekuje-page .section-dark, body.dziekuje-page main, body.dziekuje-page .default-container { background-color: rgba(0,0,0,0.4); }
+body.News-page .background-fixed { background-color: rgba(0,0,0,0.7); }
+body.News-page .section-dark { background-color: rgba(0,0,0,0.95); }
 
 /* === KONIEC BLOKÓW PRZEŹROCZYSTOŚCI === */
 /* === Sekcje główne === */
@@ -139,7 +132,6 @@ main {
   color: #ddd;
   padding: 4rem 2rem;
 }
-
 
 /* === Kontener domyślny (standaryzowany) === */
 .default-container {
@@ -337,174 +329,6 @@ main {
   background-color: #6dbdd5;
 }
 
-/* === FAQ i Blog === */
-.faq-list {
-  list-style: none;
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
-  padding: 0;
-}
-
-.faq-list li {
-  margin-bottom: 2rem;
-}
-
-.faq-list strong {
-  display: block;
-  color: #eee;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.faq-list div {
-  color: #ccc;
-  font-size: 0.95rem;
-}
-
-.blog-entry {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.blog-image {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.blog-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.blog-entry {
-  display: flow-root;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 1.5rem;
-  overflow: hidden;
-}
-
-.blog-image {
-  float: left;
-  width: 16.666%;
-  height: auto;
-  margin-right: 1.5rem;
-  margin-bottom: 0.5rem;
-  object-fit: contain;
-}
-
-.blog-content a {
-  color: #87CEEB;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.blog-content a:hover {
-  text-decoration: underline;
-}
-
-.blog-content p {
-  margin-top: 0.5rem;
-  color: #ccc;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* === Animacje === */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === Tło === */
-body::before {
-  /* Usunięcie domyślnego tła na podstronach galerii, by nie przykrywało dynamicznego tła JS */
-  content: "";
-  display: none;
-}
-
-body:not(.gallery-page)::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("https://placehold.co/1500x800/111111/eeeeee/png?text=Alichja.ink +-+TWOJA+opowieść");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  opacity: 0.0;
-}
-
-.message-wrapper {
-  display: flex;
-  flex-direction: column;
-  font-family: Calibri, sans-serif;
-  border: 1px solid #444;
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: #222;
-}
-
-#summary,
-#user-message {
-  font-family: Calibri, sans-serif;
-  padding: 0.75rem 1rem;
-  border: none;
-  background-color: transparent;
-  color: #eee;
-  font-size: 1rem;
-  resize: none;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-#summary {
-  border-bottom: none;
-  background-color: transparent;
-  overflow: hidden;
-  min-height: 2em;
-  margin-bottom: 0;
-}
-
-#user-message {
-  border-top: none;
-  margin-top: 0;
-}
-
-#summary:focus,
-#user-message:focus {
-  outline: none;
-  box-shadow: none;
-  background-color: transparent;
-}
-
-#summary:focus-visible,
-#user-message:focus-visible {
-  outline: none;
-}
-
-#summary {
-  cursor: default;
-}
-
 @media (max-width: 480px) {
   .contact-form button {
     font-size: 1.2rem;
@@ -629,27 +453,29 @@ body.gallery-page .section-dark {
   line-height: 1.6;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 768px) {
   .news-list {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 .floating-social-bar {
+  /* ZMIANA: Przesunięto na górę strony, pod menu, zachowano pionowy układ */
   position: fixed;
-  top: 40%;
+  top: 80px; /* ZMIANA: Ustawienie na stałe 80px od góry (dostosuj do wysokości menu) */
   left: 0;
-  transform: translateY(-50%);
+  transform: none; /* ZMIANA: Usunięto transform: translateY(-50%) */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* ZMIANA: Pasek pionowo */
   gap: 1rem;
-  background: transparent;
+  background: transparent; /* Pasek sam w sobie przezroczysty, ikony mają własne tło */
   z-index: 1000;
-  padding-left: 0.3rem;
+  padding-left: 0.3rem; /* Mały padding od lewej krawędzi */
+  bottom: auto; /* ZMIANA: Usunięto bottom */
 }
 
 .floating-social-bar a {
-  display: block;
+  display: block; /* Każda ikona jako blok */
   background-color: rgba(30, 30, 30, 0.9);
   color: #87CEEB;
   text-decoration: none;
@@ -667,50 +493,40 @@ body.gallery-page .section-dark {
   transform: translateX(4px);
 }
 
-/* ... reszta Twojego style.css ... */
-
-/* Zmiany GEMINI: Dopasowanie pozycji paska social media na małych ekranach */
+/* ZMIANA: Dostosowanie pozycji paska social media na małych ekranach (góra) */
 @media (max-width: 768px) {
   .floating-social-bar {
-    flex-direction: column; /* Zmieniamy na układ poziomy */
-    top: auto; /* Nie używamy top */
-    bottom: 5rem; /* Wartość procentowa: np. 12% wysokości widoku, dostosuj! */
-    left: 1rem; /* Wartość procentowa: np. 3% szerokości widoku, dostosuj! */
-    transform: none; /* Usuwamy transform: translateX(-50%) */
-    padding: 0.3rem 0.8rem; /* Dodajemy padding dla lepszego wyglądu paska */
-    background-color: rgba(0,0,0,0.8); /* Dajemy dyskretne tło dla całego paska */
-    border-top-left-radius: 8px; /* Zaokrąglenia na górze paska */
-    border-top-right-radius: 8px; /* Zaokrąglenia na górze paska */
-    border-bottom-left-radius: 0; /* Bez zaokrągleń na dole */
-    border-bottom-right-radius: 0; /* Bez zaokrągleń na dole */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    z-index: 1001; /* Upewniamy się, że jest na wierzchu */
-    width: auto; /* Szerokość dostosowuje się do zawartości */
-    justify-content: flex-start; /* Wyrównujemy ikonki do lewej */
-    gap: 0.5rem; /* Zwiększamy odstęp między ikonkami dla lepszej czytelności */
+    flex-direction: column; /* Nadal pionowo na mobilach */
+    top: 70px; /* ZMIANA: Dostosowano top dla mobilnych */
+    left: 3vw; /* Wartość procentowa od lewej */
+    bottom: auto; /* ZMIANA: Usunięto bottom */
+    transform: none; /* ZMIANA: Upewniamy się, że nie ma transformacji */
+    padding: 0; /* ZMIANA: Resetujemy padding, bo ikony mają własny */
+    background-color: transparent; /* Pasek jest przezroczysty */
+    border-radius: 0; /* Bez zaokrągleń dla paska */
+    z-index: 1001;
+    width: auto;
+    align-items: flex-start;
   }
 
   .floating-social-bar a {
-    /* Modyfikujemy style pojedynczych ikon w poziomym pasku */
-    display: flex; /* Używamy flex, żeby móc centrować obrazek */
-    align-items: center; /* Centrowanie w pionie */
-    justify-content: center; /* Centrowanie w poziomie */
-    background-color: transparent; /* Ikony nie potrzebują własnego tła, jest na całym pasku */
-    color: #87CEEB; /* Kolor ikonek */
+    display: block; /* Każda ikona jako blok */
+    background-color: rgba(30, 30, 30, 0.9); /* Dajemy im własne tło */
+    color: #87CEEB;
     text-decoration: none;
-    font-size: 1.5rem; /* Zachowujemy rozmiar czcionki (gdyby był tekst) */
-    padding: 0; /* Usuwamy padding z pojedynczych ikon, jest na całym pasku */
-    border-radius: 50%; /* Opcjonalnie: zaokrąglamy ikonki do kół */
-    box-shadow: none; /* Usuwamy cień z pojedynczych ikon */
+    font-size: 1.5rem;
+    padding: 0.5rem 0.6rem;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
     transition: transform 0.3s, background-color 0.3s;
-    margin: 0; /* Usuwamy marginesy między ikonami, używamy 'gap' na kontenerze */
+    margin-bottom: 1rem; /* Dodajemy margines między ikonami */
   }
 
-  /* Dopasowanie hovera dla mobilnego paska social */
   .floating-social-bar a:hover {
-    background-color: rgba(255,255,255,0.1); /* Delikatne podświetlenie na hoverze */
-    color: #87CEEB; /* Kolor ikony bez zmian */
-    transform: none; /* Brak przesunięcia na hoverze, wygląda lepiej w poziomie */
+    background-color: #fff;
+    color: #000;
+    transform: translateX(4px);
   }
 }
 
