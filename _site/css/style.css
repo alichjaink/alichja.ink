@@ -716,7 +716,7 @@ body.gallery-page .section-dark {
   /* ZMIANA: Przesunięto na górę strony, pod menu, zachowano pionowy układ */
   position: fixed;/* Ten parametr sprawia, że pasek jest przypięty do okna przeglądarki, niezależnie od przewijania. */
   top: 70px; /* ZMIANA: Ustawienie na stałe 80px od góry (dostosuj do wysokości menu) */
-  left: 3vw; /* Przypina pasek do LEWEJ krawędzi okna przeglądarki. */
+  left: 0; /* left: 3vw; Przypina pasek do LEWEJ krawędzi okna przeglądarki. */
   transform: none; /* ZMIANA: Usunięto transform: translateY(-50%) */
   display: flex;
   flex-direction: column; /* ZMIANA: Pasek pionowo */
@@ -771,7 +771,7 @@ body.gallery-page .section-dark {
     flex-direction: column; /* Ustawiamy z powrotem na kolumnę dla mobilnych */
     top: 70px; /* Nie używamy top */
     bottom: auto; /* Wartość procentowa: np. 12% wysokości widoku, dostosuj! */
-    left: 3vw; /* Wartość procentowa: np. 3% szerokości widoku, dostosuj! */
+    left: 0; /* Left: 3vw; Wartość procentowa: np. 3% szerokości widoku, dostosuj! */
     transform: none; /* Usuwamy transform: translateX(-50%) */
     padding: 0; /* Resetujemy padding, jeśli był ustawiony na poziomie paska dla mobilnych */
     background-color: transparent; /* Pasek ma być przezroczysty, ikony mają własne tło */
