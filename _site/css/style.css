@@ -197,7 +197,7 @@ main {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
