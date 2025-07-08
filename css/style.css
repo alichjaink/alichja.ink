@@ -106,7 +106,7 @@ body.Regulations-page .regulations-list div {
   .floating-regulations-btn {
     font-size: 0.98em;
     padding: 0.6em 1.2em;
-    top: 10 vw;
+    top: 50px; /* ZMIANA: Ustawienie na stałe 50px od góry (dostosuj do wysokości menu) */
     right: 20vw;
     /* bottom: 3vw; */
   }
