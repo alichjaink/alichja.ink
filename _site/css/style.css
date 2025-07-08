@@ -672,7 +672,7 @@ body.gallery-page .section-dark {
 /* Zmiany GEMINI: Dopasowanie pozycji paska social media na małych ekranach */
 @media (max-width: 768px) {
   .floating-social-bar {
-    flex-direction: row; /* Zmieniamy na układ poziomy */
+    flex-direction: column; /* Zmieniamy na układ poziomy */
     top: auto; /* Nie używamy top */
     bottom: 5rem; /* Wartość procentowa: np. 12% wysokości widoku, dostosuj! */
     left: 1rem; /* Wartość procentowa: np. 3% szerokości widoku, dostosuj! */
