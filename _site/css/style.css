@@ -674,15 +674,16 @@ body.gallery-page .section-dark {
   .floating-social-bar {
     flex-direction: row; /* Zmieniamy na układ poziomy */
     top: auto; /* Nie używamy top */
-    bottom: 12vh; /* Wartość procentowa: np. 12% wysokości widoku, dostosuj! */
-    left: 3vw; /* Wartość procentowa: np. 3% szerokości widoku, dostosuj! */
+    bottom: 5rem; /* Wartość procentowa: np. 12% wysokości widoku, dostosuj! */
+    left: 1rem; /* Wartość procentowa: np. 3% szerokości widoku, dostosuj! */
     transform: none; /* Usuwamy transform: translateX(-50%) */
-    padding: 0.5rem 1rem; /* Dodajemy padding dla lepszego wyglądu paska */
+    padding: 0.3rem 0.8rem; /* Dodajemy padding dla lepszego wyglądu paska */
     background-color: rgba(0,0,0,0.8); /* Dajemy dyskretne tło dla całego paska */
     border-top-left-radius: 8px; /* Zaokrąglenia na górze paska */
     border-top-right-radius: 8px; /* Zaokrąglenia na górze paska */
     border-bottom-left-radius: 0; /* Bez zaokrągleń na dole */
     border-bottom-right-radius: 0; /* Bez zaokrągleń na dole */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
     z-index: 1001; /* Upewniamy się, że jest na wierzchu */
     width: auto; /* Szerokość dostosowuje się do zawartości */
     justify-content: flex-start; /* Wyrównujemy ikonki do lewej */
