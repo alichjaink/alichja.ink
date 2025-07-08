@@ -496,7 +496,7 @@ body.gallery-page .section-dark {
   transform: none; /* Usuwa wszelkie poprzednie transformacje, np. centrowanie. */
   display: flex;
   flex-direction: column; /* Ustawia ikony w kolumnę (pionowo). */
-  gap: 0,25rem;       /* Odstęp między ikonami. */
+  gap: 0,40rem;       /* Odstęp między ikonami. */
   background: transparent; /* Kontener paska jest przezroczysty. */
   z-index: 1000;
   padding-left: 0.3rem; /* Mały margines od lewej krawędzi okna. */
@@ -505,7 +505,7 @@ body.gallery-page .section-dark {
 
 .floating-social-bar a {
   display: block; /* Każda ikona jest renderowana jako blok, umożliwiając padding i marginesy. */
-  background-color: rgba(30, 30, 30, 0.9); /* Tło dla każdej pojedynczej ikony. */
+  background-color: rgba(52, 52, 52, 0.9); /* Tło dla każdej pojedynczej ikony. */
   color: #87CEEB;
   text-decoration: none;
   font-size: 1.5rem;
