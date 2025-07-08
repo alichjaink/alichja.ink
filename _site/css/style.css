@@ -88,7 +88,7 @@ body.Regulations-page .regulations-list div {
   background: rgba(30, 30, 30, 0.92);
   color: #fff;
   border-radius: 2em;
-  padding: 0.2em 0.2;
+  padding: 0.2em 1em;
   font-size: 0.9em;
   font-family: inherit;
   box-shadow: 0 2px 12px rgba(0,0,0,0.18);
@@ -112,7 +112,7 @@ body.Regulations-page .regulations-list div {
 @media (max-width: 600px) {
   .floating-regulations-btn {
     font-size: 0.85em;
-    padding: 0.2em 0.2em;
+    padding: 0.2em 1em;
     top: 40px;      /* Ten parametr, podobnie jak wyżej, określa odsunięcie od góry dla mniejszych ekranów. Dostosuj, jeśli menu jest niższe na mobilnych. */
     left: 50%;      /* Centrowanie od lewej. */
     transform: translateX(-50%); /* Korygowanie pozycji. */
