@@ -629,7 +629,7 @@ body.gallery-page .section-dark {
   line-height: 1.6;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 400px) {
   .news-list {
     grid-template-columns: 1fr 1fr;
   }
