@@ -127,11 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-  
 
 
-// Dane kontaktowe UKRYTE I ZAKODOWANE W JAVASCRIPCIE
-
+// ============================================================
+  // Dane kontaktowe UKRYTE I ZAKODOWANE W JAVASCRIPCIE
+// ============================================================
 document.addEventListener("DOMContentLoaded", function () {
 
   const emailParts = ["alichja", ".", "ink", "@", "gmail", ".", "com"];
