@@ -27,9 +27,9 @@ html, body {
   /* Zapobiega przewijaniu poziomemu, jeśli jakiś element jest zbyt szeroki. */
   /* overflow-x: hidden; */
   /* Resetuje minimalną szerokość, by body mogło skurczyć się do dowolnej wielkości. */
-  min-width: 0;
+  /* min-width: 0; */
   /* Zapewnia, że body i html zawsze zajmują 100% szerokości okna przeglądarki. */
-  width: 100%;
+  /* width: 100%; */
 }
 
 /* Zapewnia, że obrazy, filmy i elementy osadzone są responsywne i nie wychodzą poza swoje kontenery. */
