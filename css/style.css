@@ -57,7 +57,7 @@ body.Regulations-page .regulations-list {
 body.Regulations-page .regulations-list li {
   margin-bottom: 2.2rem;
   padding-bottom: 1.2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,1.08);
 }
 body.Regulations-page .regulations-list li:last-child {
   border-bottom: none;
@@ -127,8 +127,8 @@ body.gallery-page .section-dark, body.gallery-page main, body.gallery-page .defa
 
 
 /* REGULAMIN / REGULATIONS */
-body.Regulations-page .background-fixed { opacity: 0.5; }
-body.Regulations-page .section-dark, body.Regulations-page main, body.Regulations-page .default-container { background-color: rgba(0,0,0,0.45); }
+body.Regulations-page .background-fixed { opacity: 0.8; }
+body.Regulations-page .section-dark, body.Regulations-page main, body.Regulations-page .default-container { background-color: rgba(0,0,0,0.8); }
 
 /* FAQ */
 body.faq-page .background-fixed { opacity: 0.5; }
