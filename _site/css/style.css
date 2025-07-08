@@ -33,11 +33,11 @@ html, body {
 }
 
 /* Zapewnia, że obrazy, filmy i elementy osadzone są responsywne i nie wychodzą poza swoje kontenery. */
-img, video, iframe, object, embed {
+/* img, video, iframe, object, embed { */
   max-width: 100%; /* Sprawia, że element nigdy nie będzie szerszy niż jego kontener. */
-  height: auto;    /* Zachowuje proporcje wysokości do szerokości. */
-  display: block;  /* Ustawia element jako blokowy, co pomaga w układzie. */
-}
+/*  height: auto;    /* Zachowuje proporcje wysokości do szerokości. */
+/*  display: block;  /* Ustawia element jako blokowy, co pomaga w układzie. */
+/*} */
 
 /* === Styl sekcji regulaminu i polityki prywatności === */
 body.Regulations-page .regulations-section {
