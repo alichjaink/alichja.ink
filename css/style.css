@@ -25,7 +25,7 @@
 /* GLOBALNE ZABEZPIECZENIA RESPONSyWNOŚCI */
 html, body {
   /* Zapobiega przewijaniu poziomemu, jeśli jakiś element jest zbyt szeroki. */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   /* Resetuje minimalną szerokość, by body mogło skurczyć się do dowolnej wielkości. */
   min-width: 0;
   /* Zapewnia, że body i html zawsze zajmują 100% szerokości okna przeglądarki. */
@@ -111,7 +111,7 @@ body.Regulations-page .regulations-list div {
 /* @media dla przycisku regulacji na małych ekranach */
 @media (max-width: 600px) {
   .floating-regulations-btn {
-    font-size: 0.5em;
+    font-size: 0.7em;
     padding: 0.2em 1em;
     top: 40px;      /* Ten parametr, podobnie jak wyżej, określa odsunięcie od góry dla mniejszych ekranów. Dostosuj, jeśli menu jest niższe na mobilnych. */
     left: 50%;      /* Centrowanie od lewej. */
@@ -221,7 +221,7 @@ main {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
