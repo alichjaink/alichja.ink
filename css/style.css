@@ -214,6 +214,29 @@ main {
   color: #87CEEB;
   border-bottom: 2px solid #87CEEB;
 }
+
+/* MIOKO!!!!!!   Nowa sekcja media query dla menu mobilnego */
+@media (max-width: 768px) { /* lub 600px, w zależności, gdzie menu przestaje się mieścić */
+  .nav-main ul {
+    gap: 0.8rem; /* ZMNIEJSZONY odstęp między elementami menu */
+    flex-wrap: wrap; /* POZWALA elementom przechodzić do następnej linii, jeśli się nie mieszczą */
+    justify-content: space-around; /* Rozkłada elementy równomiernie */
+    padding: 0.5rem; /* Dodatkowy padding dla ul, aby elementy nie przylegały do krawędzi */
+  }
+
+  .nav-main a {
+    font-size: 0.9rem; /* ZMNIEJSZONY rozmiar czcionki */
+    padding: 0.5rem 0.8rem; /* ZMNIEJSZONY padding wokół tekstu linku */
+  }
+
+  .nav-main {
+    padding: 0.5rem 0; /* ZMNIEJSZONY padding góra/dół dla całego menu */
+  }
+}
+
+
+
+
 /* === Przycisk domyślny (standaryzowany) === */
 .default-btn {
   padding: 1rem 2.2rem;
