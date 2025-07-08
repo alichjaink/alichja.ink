@@ -60,7 +60,7 @@ body.Regulations-page .regulations-list div {
 .floating-regulations-btn {
   position: fixed;
   top: 80px; /* ZMIANA: Przesunięto na górę, pod menu */
-  right: 2vw;
+  right: 20px;
   bottom: auto; /* ZMIANA: Usunięto bottom */
   z-index: 1000;
   background: rgba(30, 30, 30, 0.92);
