@@ -89,7 +89,7 @@ body.Regulations-page .regulations-list div {
   box-shadow: 0 2px 12px rgba(0,0,0,0.18);
   text-decoration: none;
   transition: background 0.2s, box-shadow 0.2s, color 0.2s;
-  border: none;
+  border: none;;
   outline: none;
   display: flex;
   align-items: center;
@@ -107,7 +107,8 @@ body.Regulations-page .regulations-list div {
     font-size: 0.98em;
     padding: 0.6em 1.2em;
     right: 20vw;
-    bottom: 3vw;
+    /* bottom: 3vw; */
+    top 10 wg;
   }
 }
 
