@@ -12,32 +12,34 @@
   - .gallery-flex, .gallery-item, .gallery-thumbnail – układ i styl galerii zdjęć
   - .fade-in – animacja pojawiania się sekcji przy przewijaniu
   - Bloki body.[nazwa-strony] ... – ustawienia przeźroczystości tła i kontenerów dla każdej podstrony
-  - .regulations-section, .regulations-list – dedykowane style dla podstrony Regulaminu, Polityki Prywatności i RODO
-  – Pływający pasek ikon sociali (z lewej strony)
-    - .floating-social-bar – kontener z ikonami
-    - .floating-social-bar a – pojedyncze przyciski
 
   Zmiana wartości w blokach body.[nazwa-strony] .background-fixed lub .section-dark
   wpływa na widoczność tła i czytelność treści na danej podstronie.
 ============================================================
+ */
+
+/*
+============================================================
+  style.css – główny arkusz stylów serwisu Alichja
+
+  Opis kluczowych klas i sekcji:
+  - .background-fixed – warstwa tła dynamicznego (zmieniana przez JS)
+  - .section-dark – ciemne, półprzezroczyste tło sekcji/kontenera (okno na treść)
+  - .default-container – główny kontener sekcji, ogranicza szerokość i dodaje padding
+  - .default-section-title, .default-page-title – standaryzowane tytuły sekcji i stron
+  - .nav-main – główna nawigacja (menu)
+  - .default-btn – przycisk akcji
+  - .gallery-flex, .gallery-item, .gallery-thumbnail – układ i styl galerii zdjęć
+  - .fade-in – animacja pojawiania się sekcji przy przewijaniu
+  - Bloki body.[nazwa-strony] ... – ustawienia przeźroczystości tła i kontenerów dla każdej podstrony
+  - .regulations-section, .regulations-list – dedykowane style dla podstrony Regulaminu, Polityki Prywatności i RODO
+  – Pływający pasek ikon sociali (z lewej strony)
+    - .floating-social-bar – kontener z ikonami
+    - .floating-social-bar a – pojedyncze przyciski 
+  Zmiana wartości w blokach body.[nazwa-strony] .background-fixed lub .section-dark
+  wpływa na widoczność tła i czytelność treści na danej podstronie.
+============================================================
 */
-
-/* GLOBALNE ZABEZPIECZENIA RESPONSyWNOŚCI */
-html, body {
-  /* Zapobiega przewijaniu poziomemu, jeśli jakiś element jest zbyt szeroki. */
-  /* overflow-x: hidden; */
-  /* Resetuje minimalną szerokość, by body mogło skurczyć się do dowolnej wielkości. */
-  /* min-width: 0; */
-  /* Zapewnia, że body i html zawsze zajmują 100% szerokości okna przeglądarki. */
-  /* width: 100%; */
-}
-
-/* Zapewnia, że obrazy, filmy i elementy osadzone są responsywne i nie wychodzą poza swoje kontenery. */
-/* img, video, iframe, object, embed { */
-  max-width: 100%; /* Sprawia, że element nigdy nie będzie szerszy niż jego kontener. */
-/*  height: auto;    /* Zachowuje proporcje wysokości do szerokości. */
-/*  display: block;  /* Ustawia element jako blokowy, co pomaga w układzie. */
-/*} */
 
 /* === Styl sekcji regulaminu i polityki prywatności === */
 body.Regulations-page .regulations-section {
@@ -71,25 +73,18 @@ body.Regulations-page .regulations-list div {
   color: #eee;
   font-size: 1em;
   line-height: 1.6;
-  /* Dzieli długie słowa, by nie wychodziły poza kontener, zapewniając responsywność tekstu. */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
-
-/* === Przycisk regulacji - ZMIANY: Umieszczenie na środku, pod menu === */
+/* === Przycisk regulacji w prawym dolnym rogu === */
 .floating-regulations-btn {
-  position: fixed; /* Ten parametr sprawia, że element jest przypięty do okna przeglądarki, niezależnie od przewijania strony. */
-  top: 60px;       /* Ten parametr określa odsunięcie elementu od GÓRNEJ krawędzi okna przeglądarki. Wartość "80px" jest przykładem - dostosuj ją, aby przycisk był idealnie pod Twoim menu głównym. */
-  left: 50%;       /* Ten parametr przesuwa lewą krawędzią elementu na 50% szerokości okna przeglądarki. To jest pierwszy krok do centrowania. */
-  transform: translateX(-50%); /* Ten parametr koryguje pozycję elementu, przesuwając go o połowę jego własnej szerokości W LEWO. W połączeniu z "left: 50%;" powoduje to idealne wycentrowanie elementu horyzontalnie. */
-  right: auto;     /* Ten parametr upewnia się, że nie ma konfliktu z ustawieniem "right" z poprzednich reguł - jest ustawiony na automatyczny. */
-  bottom: auto;    /* Ten parametr upewnia się, że nie ma konfliktu z ustawieniem "bottom" z poprzednich reguł - jest ustawiony na automatyczny. */
-  z-index: 1000;   /* Ten parametr określa kolejność nakładania się elementów. Wyższa wartość oznacza, że element będzie "na wierzchu" innych, co jest ważne dla elementów fixed. */
+  position: fixed;
+  right: 2vw;
+  bottom: 2vw;
+  z-index: 1000;
   background: rgba(30, 30, 30, 0.92);
   color: #fff;
   border-radius: 2em;
-  padding: 0.2em 1em;
-  font-size: 0.8em;
+  padding: 0.7em 1.6em;
+  font-size: 1.05em;
   font-family: inherit;
   box-shadow: 0 2px 12px rgba(0,0,0,0.18);
   text-decoration: none;
@@ -107,41 +102,46 @@ body.Regulations-page .regulations-list div {
   box-shadow: 0 4px 18px rgba(0,0,0,0.22);
   text-decoration: underline;
 }
-
-/* @media dla przycisku regulacji na małych ekranach */
 @media (max-width: 600px) {
   .floating-regulations-btn {
-    font-size: 0.7em;
-    padding: 0.2em 1em;
-    top: 40px;      /* Ten parametr, podobnie jak wyżej, określa odsunięcie od góry dla mniejszych ekranów. Dostosuj, jeśli menu jest niższe na mobilnych. */
-    left: 50%;      /* Centrowanie od lewej. */
-    transform: translateX(-50%); /* Korygowanie pozycji. */
-    right: auto;    /* Upewnia się, że nie ma konfliktu. */
-    bottom: auto;   /* Upewnia się, że nie ma konfliktu. */
+    font-size: 0.98em;
+    padding: 0.6em 1.2em;
+    right: 3vw;
+    bottom: 3vw;
   }
 }
 
 /* === PRZEŹROCZYSTOŚĆ TŁA I KONTENERÓW DLA KAŻDEJ STRONY === */
-body.main-page .background-fixed { background-color: rgba(0,0,0,0.1); }
-body.main-page .section-dark { background-color: rgba(0,0,0,0.4); }
 
-body.Gallery-page .background-fixed { background-color: rgba(0,0,0,0.2); }
-body.Gallery-page .section-dark { background-color: rgba(0,0,0,0.5); }
 
-body.Portfolio-page .background-fixed { background-color: rgba(0,0,0,0.3); }
-body.Portfolio-page .section-dark { background-color: rgba(0,0,0,0.6); }
+/* STRONA GŁÓWNA */
+body.home-page .background-fixed { opacity: 0.6; }
+body.home-page .section-dark, body.home-page main, body.home-page .default-container { background-color: rgba(0,0,0,0.4); }
 
-body.Regulations-page .background-fixed { background-color: rgba(0,0,0,0.4); }
-body.Regulations-page .section-dark { background-color: rgba(0,0,0,0.7); }
+/* GALERIA */
+body.gallery-page .background-fixed { opacity: 0.6; }
+body.gallery-page .section-dark, body.gallery-page main, body.gallery-page .default-container { background-color: rgba(0,0,0,0.4); }
 
-body.Contact-page .background-fixed { background-color: rgba(0,0,0,0.5); }
-body.Contact-page .section-dark { background-color: rgba(0,0,0,0.8); }
 
-body.FAQ-page .background-fixed { background-color: rgba(0,0,0,0.6); }
-body.FAQ-page .section-dark { background-color: rgba(0,0,0,0.9); }
+/* REGULAMIN / REGULATIONS */
+body.Regulations-page .background-fixed { opacity: 0.5; }
+body.Regulations-page .section-dark, body.Regulations-page main, body.Regulations-page .default-container { background-color: rgba(0,0,0,0.45); }
 
-body.News-page .background-fixed { background-color: rgba(0,0,0,0.7); }
-body.News-page .section-dark { background-color: rgba(0,0,0,0.95); }
+/* FAQ */
+body.faq-page .background-fixed { opacity: 0.5; }
+body.faq-page .section-dark, body.faq-page main, body.faq-page .default-container { background-color: rgba(0,0,0,0.4); }
+
+/* BLOG */
+body.blog-page .background-fixed { opacity: 0.6; }
+body.blog-page .section-dark, body.blog-page main, body.blog-page .default-container { background-color: rgba(0,0,0,0.6); }
+
+/* HISTORIA */
+body.historia-page .background-fixed { opacity: 0.5; }
+body.historia-page .section-dark, body.historia-page main, body.historia-page .default-container { background-color: rgba(0,0,0,0.4); }
+
+/* DZIEKUJE */
+body.dziekuje-page .background-fixed { opacity: 0.5; }
+body.dziekuje-page .section-dark, body.dziekuje-page main, body.dziekuje-page .default-container { background-color: rgba(0,0,0,0.4); }
 
 /* === KONIEC BLOKÓW PRZEŹROCZYSTOŚCI === */
 /* === Sekcje główne === */
@@ -151,18 +151,18 @@ main {
 }
 
 .section-dark {
+  /* Uwaga: przezroczystość tła zmniejszona, by dynamiczne tło galerii było widoczne */
   background-color: rgba(0, 0, 0, 0.6);
   color: #ddd;
   padding: 4rem 2rem;
 }
+
 
 /* === Kontener domyślny (standaryzowany) === */
 .default-container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
-  /* Zapewnia, że padding i border są wliczane w szerokość elementu, zapobiegając wychodzeniu poza kontener. */
-  box-sizing: border-box;
 }
 
 /* === Tytuły sekcji i stron (standaryzowane) === */
@@ -182,8 +182,8 @@ main {
 /* === Nawigacja === */
 /* === Nawigacja główna (standaryzowana) === */
 .nav-main {
-  position: sticky; /* Menu "przykleja" się do góry podczas przewijania. */
-  top: 0;           /* Przykleja się do samej góry okna przeglądarki. */
+  position: sticky;
+  top: 0;
   background: #000;
   z-index: 999;
   padding: 1rem 0;
@@ -354,6 +354,174 @@ main {
   background-color: #6dbdd5;
 }
 
+/* === FAQ i Blog === */
+.faq-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  padding: 0;
+}
+
+.faq-list li {
+  margin-bottom: 2rem;
+}
+
+.faq-list strong {
+  display: block;
+  color: #eee;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-list div {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.blog-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.blog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.blog-entry {
+  display: flow-root;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.blog-image {
+  float: left;
+  width: 16.666%;
+  height: auto;
+  margin-right: 1.5rem;
+  margin-bottom: 0.5rem;
+  object-fit: contain;
+}
+
+.blog-content a {
+  color: #87CEEB;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+.blog-content p {
+  margin-top: 0.5rem;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* === Animacje === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Tło === */
+body::before {
+  /* Usunięcie domyślnego tła na podstronach galerii, by nie przykrywało dynamicznego tła JS */
+  content: "";
+  display: none;
+}
+
+body:not(.gallery-page)::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://placehold.co/1500x800/111111/eeeeee/png?text=Alichja.ink +-+TWOJA+opowieść");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.0;
+}
+
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: Calibri, sans-serif;
+  border: 1px solid #444;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #222;
+}
+
+#summary,
+#user-message {
+  font-family: Calibri, sans-serif;
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: transparent;
+  color: #eee;
+  font-size: 1rem;
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#summary {
+  border-bottom: none;
+  background-color: transparent;
+  overflow: hidden;
+  min-height: 2em;
+  margin-bottom: 0;
+}
+
+#user-message {
+  border-top: none;
+  margin-top: 0;
+}
+
+#summary:focus,
+#user-message:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+#summary:focus-visible,
+#user-message:focus-visible {
+  outline: none;
+}
+
+#summary {
+  cursor: default;
+}
+
 @media (max-width: 480px) {
   .contact-form button {
     font-size: 1.2rem;
@@ -404,8 +572,7 @@ main {
 }
 
 .gallery-flex .gallery-item {
-  /* ZMIANA: Zmieniono flex-basis z 280px na auto, aby elementy galerii mogły się elastyczniej kurczyć. */
-  flex: 1 1 auto;
+  flex: 1 1 280px;
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -477,9 +644,6 @@ body.gallery-page .section-dark {
   font-size: 1rem;
   color: #ddd;
   line-height: 1.6;
-  /* Dzieli długie słowa, by nie wychodziły poza kontener, zapewniając responsywność tekstu. */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 @media (min-width: 768px) {
@@ -488,24 +652,23 @@ body.gallery-page .section-dark {
   }
 }
 
-/* Pływający pasek ikon sociali (z lewej strony) - ZMIANY: Pozycja u góry, pod menu, pionowo */
+
 .floating-social-bar {
-  position: fixed; /* Ten parametr sprawia, że pasek jest przypięty do okna przeglądarki, niezależnie od przewijania. */
-  top: 80px;       /* Określa odsunięcie paska od GÓRNEJ krawędzi okna przeglądarki. Dostosuj do wysokości menu. */
-  left: 0;         /* Przypina pasek do LEWEJ krawędzi okna przeglądarki. */
-  transform: none; /* Usuwa wszelkie poprzednie transformacje, np. centrowanie. */
+  position: fixed;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
   display: flex;
-  flex-direction: column; /* Ustawia ikony w kolumnę (pionowo). */
-  gap: 0.60rem;       /* Odstęp między ikonami. */
-  background: transparent; /* Kontener paska jest przezroczysty. */
+  flex-direction: column;
+  gap: 1rem;
+  background: transparent;
   z-index: 1000;
-  padding-left: 0.3rem; /* Mały margines od lewej krawędzi okna. */
-  bottom: auto;    /* Upewnia się, że nie ma konfliktu z poprzednim ustawieniem "bottom". */
+  padding-left: 0.3rem;
 }
 
 .floating-social-bar a {
-  display: block; /* Każda ikona jest renderowana jako blok, umożliwiając padding i marginesy. */
-  background-color: rgba(52, 52, 52, 0.9); /* Tło dla każdej pojedynczej ikony. */
+  display: block;
+  background-color: rgba(30, 30, 30, 0.9);
   color: #87CEEB;
   text-decoration: none;
   font-size: 1.5rem;
@@ -519,43 +682,25 @@ body.gallery-page .section-dark {
 .floating-social-bar a:hover {
   background-color: #fff;
   color: #000;
-  transform: translateX(4px); /* Przesunięcie ikony w prawo przy najechaniu. */
+  transform: translateX(4px);
 }
 
-/* @media dla paska social media na małych ekranach */
 @media (max-width: 768px) {
   .floating-social-bar {
-    flex-direction: column; /* Nadal pionowo na mobilnych. */
-    top: 70px; /* Określa odsunięcie od góry dla mniejszych ekranów. Dostosuj, jeśli menu jest niższe na mobilnych. */
-    left: 3vw; /* Odsunięcie od lewej krawędzi (procentowe dla elastyczności). */
-    bottom: auto;
-    transform: none;
-    padding: 0;
-    background-color: transparent;
-    border-radius: 0;
-    z-index: 1001;
-    width: auto;
-    align-items: flex-start;
+    flex-direction: row;
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    background-color: rgba(0,0,0,0.8);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
 
   .floating-social-bar a {
-    display: block;
-    background-color: rgba(30, 30, 30, 0.9);
-    color: #87CEEB;
-    text-decoration: none;
-    font-size: 1.5rem;
-    padding: 0.5rem 0.6rem;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    transition: transform 0.3s, background-color 0.3s;
-    margin-bottom: 0.5rem; /* Dodaje odstęp między ikonami na mobilnych. */
-  }
-
-  .floating-social-bar a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: #87CEEB;
-    transform: none; /* Bez przesunięcia na hover na mobilnych, aby pasowało do mobilnego UX. */
+    border-radius: 50%;
+    padding: 0.6rem 0.6rem;
   }
 }
 
