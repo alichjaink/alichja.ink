@@ -686,7 +686,7 @@ body.gallery-page .section-dark {
     z-index: 1001; /* Upewniamy się, że jest na wierzchu */
     width: auto; /* Szerokość dostosowuje się do zawartości */
     justify-content: flex-start; /* Wyrównujemy ikonki do lewej */
-    gap: 1rem; /* Zwiększamy odstęp między ikonkami dla lepszej czytelności */
+    gap: 0rem; /* Zwiększamy odstęp między ikonkami dla lepszej czytelności */
   }
 
   .floating-social-bar a {
