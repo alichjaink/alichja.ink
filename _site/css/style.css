@@ -693,7 +693,7 @@ body.gallery-page .section-dark {
   transform: none; /* ZMIANA: Usunięto transform: translateY(-50%) */
   display: flex;
   flex-direction: column; /* ZMIANA: Pasek pionowo */
-  gap: 0.3rem; /* Odstęp między ikonami. */
+  gap: 0.4rem; /* Odstęp między ikonami. */
   background: transparent; /* Pasek sam w sobie przezroczysty, ikony mają własne tło */
   z-index: 1000;
   padding-left: 0.3rem; /* Mały padding od lewej krawędzi */
