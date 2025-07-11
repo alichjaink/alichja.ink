@@ -6,7 +6,7 @@
 
 // Czas (w milisekundach) pomiędzy zmianami tła – ustawiany w DECAP CMS (background_time w .md)
 
-const time = 10 * 1000;
+const time = 5 * 1000;
 
 // Ustalanie basePath dla podstron w podkatalogach (faq, blog, historia, gallery)
 const basePath = window.location.pathname.includes('/faq/') ||
