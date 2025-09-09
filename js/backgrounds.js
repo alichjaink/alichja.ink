@@ -17,7 +17,7 @@ const basePath = window.location.pathname.includes('/faq/') ||
 
 // Tablica 10 ścieżek do grafik tła – statycznie
 const backgrounds = [
-  `${basePath}/images/back/img_9209.jpg`,
+  `${basePath}images/back/img_9200.jpg`,
   `${basePath}/images/back/img_9202.jpg`,
   `${basePath}/images/back/img_9296.jpg`,
   `${basePath}/images/back/img_9291.jpg`,
