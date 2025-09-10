@@ -2,125 +2,229 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   
-
+  
+  
   
 
   
-
+  
+  
   
 
   
-
+  
+  
   
 
   
-
+  
+  
   
 
   
-
+  
+  
   
 
   
-
+  
+  
   
 
   
-
+  
+  
   
 
   
-
+  
+  
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
   
   <url>
     <loc>https://alichja.ink/gallery/gallery-20250706-154950.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    
+      <lastmod>2025-07-20</lastmod>
+    
   </url>
   
 
+  
+  
+  
   
   <url>
     <loc>https://alichja.ink/gallery/gallery-20250706-155304.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    
+      <lastmod>2025-07-20</lastmod>
+    
   </url>
   
 
+  
+  
+  
   
   <url>
     <loc>https://alichja.ink/gallery/gallery-20250706-155550.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    
+      <lastmod>2025-07-20</lastmod>
+    
   </url>
   
 
   
-
+  
+  
   
 
   
-
+  
+  
   
 
   
-
+  
+  
   
 
   
-  <url>
-    <loc>https://alichja.ink/js/backgrounds.js</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  
+  
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+  
+  
   
   <url>
     <loc>https://alichja.ink/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    
+      <lastmod>2025-08-03</lastmod>
+    
   </url>
   
 
+  
+  
+  
   
   <url>
     <loc>https://alichja.ink/faq/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    
+      <lastmod>2025-08-03</lastmod>
+    
   </url>
   
 
+  
+  
+  
   
   <url>
     <loc>https://alichja.ink/historia/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    
+      <lastmod>2025-08-03</lastmod>
+    
   </url>
   
 
+  
+  
+  
   
   <url>
     <loc>https://alichja.ink/Regulations/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    
+      <lastmod>2025-08-03</lastmod>
+    
   </url>
   
 
+  
+  
+  
   
   <url>
     <loc>https://alichja.ink/blog/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    
+      <lastmod>2025-08-03</lastmod>
+    
   </url>
   
 
   
-
+  
+  
   
 
+  
+  
+  
+  
+
+  
+  
+  
   
 
 </urlset>
