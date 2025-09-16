@@ -8,12 +8,6 @@
 
 const time = 5 * 1000;
 
-// Ustalanie basePath dla podstron w podkatalogach (faq, blog, historia, gallery)
-const basePath = window.location.pathname.includes('/faq/') ||
-                 window.location.pathname.includes('/blog/') ||
-                 window.location.pathname.includes('/historia/') ||
-                 window.location.pathname.includes('/Regulations/') ||
-                 window.location.pathname.includes('/gallery/') ? '../' : '';
 
 // Tablica 10 ścieżek do grafik tła – statycznie
 const backgrounds = [
