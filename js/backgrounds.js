@@ -17,16 +17,16 @@ const basePath = window.location.pathname.includes('/faq/') ||
 
 // Tablica 10 ścieżek do grafik tła – statycznie
 const backgrounds = [
-  `${basePath}images/back/img_9200.jpg`,
-  `${basePath}/images/back/img_9202.jpg`,
-  `${basePath}/images/back/img_9296.jpg`,
-  `${basePath}/images/back/img_9291.jpg`,
-  `${basePath}/images/back/img_9209.jpg`,
-  `${basePath}/images/back/img_9241.jpg`,
-  `${basePath}/images/back/img_9252.jpg`,
-  `${basePath}/images/back/img_9288.jpg`,
-  `${basePath}/images/back/img_9204.jpg`,
-  `${basePath}/images/back/img_9214.jpg`
+  `/images/back/img_9202.jpg`,
+  `/images/back/img_9200.jpg`,
+  `/images/back/img_9291.jpg`,
+  `/images/back/img_9296.jpg`,
+  `/images/back/img_9209.jpg`,
+  `/images/back/img_9241.jpg`,
+  `/images/back/img_9252.jpg`,
+  `/images/back/img_9288.jpg`,
+  `/images/back/img_9204.jpg`,
+  `/images/back/img_9214.jpg`
 ];
 
 // Uwaga! Dalsza logika działania zmiany tła (ustawianie elementów, obsługa swapBackground itp.) znajduje się wyłącznie w pliku main.js.
