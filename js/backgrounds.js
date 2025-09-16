@@ -8,7 +8,6 @@
 
 const time = 5 * 1000;
 
-
 // Tablica 10 ścieżek do grafik tła – statycznie
 const backgrounds = [
   `/images/back/img_9202.jpg`,
