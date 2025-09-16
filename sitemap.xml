@@ -97,11 +97,6 @@
   
   
 
-  
-  
-  
-  
-
     
     
     
@@ -178,16 +173,24 @@
   
   
 
+  
+  
+  
+  
+
+  
+  
+  
+  
+
     
     
-    
-      
     
 
     <url>
-      <loc>https://alichja.ink/historia/index.html</loc>
+      <loc>https://alichja.ink/</loc>
       
-        <lastmod>2025-09-10</lastmod>
+        <lastmod>2025-09-13</lastmod>
       
     </url>
   
@@ -206,7 +209,26 @@
     <url>
       <loc>https://alichja.ink/Regulations/index.html</loc>
       
-        <lastmod>2025-09-10</lastmod>
+        <lastmod>2025-09-13</lastmod>
+      
+    </url>
+  
+
+  
+  
+  
+  
+
+    
+    
+    
+      
+    
+
+    <url>
+      <loc>https://alichja.ink/historia/index.html</loc>
+      
+        <lastmod>2025-09-13</lastmod>
       
     </url>
   
@@ -225,9 +247,14 @@
     <url>
       <loc>https://alichja.ink/blog/index.html</loc>
       
-        <lastmod>2025-09-10</lastmod>
+        <lastmod>2025-09-14</lastmod>
       
     </url>
+  
+
+  
+  
+  
   
 
   
@@ -244,36 +271,9 @@
     <url>
       <loc>https://alichja.ink/faq/index.html</loc>
       
-        <lastmod>2025-09-10</lastmod>
+        <lastmod>2025-09-15</lastmod>
       
     </url>
-  
-
-  
-  
-  
-  
-
-  
-  
-  
-  
-
-    
-    
-    
-
-    <url>
-      <loc>https://alichja.ink/</loc>
-      
-        <lastmod>2025-09-10</lastmod>
-      
-    </url>
-  
-
-  
-  
-  
   
 
 </urlset>
